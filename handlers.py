@@ -2,11 +2,12 @@ import pandas as pd
 import random
 import numpy as np
 
-"""
-Class that handle CSV file
-It takes in the CSV file/s path, read the file and return 30 consecutive DP from a random TimeStamp
-"""
+
 class FileHandler:
+    """
+    Class that handle CSV file
+    It takes in the CSV file/s path, read the file and return 30 consecutive DP from a random TimeStamp
+    """
     def __init__(self, filePath: str):
         self.filePath = filePath
         self.data = []
@@ -42,15 +43,14 @@ class FileHandler:
         
         return sample_data, fileName
 
-
-"""
-Class that detects outliers
-It takes in 30 data points and return outliers
-Outlier definition (Threshold): Any datapoint that is over 2 standard deviations beyond the mean of the 30 sampled data points.
-Mean definition: 
-Standard deviation:
-"""
 class OutlierHandler:
+    """
+    Class that detects outliers
+    It takes in 30 data points and return outliers
+    Outlier definition (Threshold): Any datapoint that is over 2 standard deviations beyond the mean of the 30 sampled data points.
+    Mean definition: 
+    Standard deviation:
+    """
     def __init__(self, df, fileName):
         self.df = df
         self.prices = []
