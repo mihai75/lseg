@@ -1,6 +1,6 @@
 # Outliers detection app
 
-It is a REST API application that accept stock_exchange and file_paths and return a list with messages (one for each file).
+This is a REST API application written in Flask that accept stock_exchange and file_paths and return a list with messages (one for each file).
 If the application detects outliers in the user provided files, it creates a new "outliers_filename".csv writing the detections in "output_files" directory.
 
 ## Prerequisites

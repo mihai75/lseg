@@ -1,15 +1,11 @@
 from flask import Flask, request, jsonify
-# from handlers import FileHandler, OutlierHandler
-
 from handlers import FileHandler, OutlierHandler
 
 app = Flask(__name__)
 
-"""
-/ endpoint. Accepts JSON requests.
-Expect stock_exchange and file_paths params in payload
-Create a CSV file for each file_paths provided in "output_files" directory if there are any outliers
-"""
+# / endpoint. Accepts JSON requests.
+# stock_exchange (string) and file_paths (list) expected in payload
+# For each CSV file provided, if OutlierHandler detects outliers it creates a new "outlier_filename".csv file in "output_files" directory
 @app.route('/', methods=['POST'])
 def process_files():
     # Handle if not JSON
